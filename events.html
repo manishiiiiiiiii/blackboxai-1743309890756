@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Meetings | Taj Hotels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .event-type-filter {
+            transition: all 0.3s ease;
+        }
+        .event-type-filter.active {
+            background-color: #2563eb;
+            color: white;
+        }
+        .venue-card:hover .venue-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <!--#include file="header.html" -->
+    
+    <!-- Hero Banner -->
+    <section class="relative bg-gray-800 h-96 flex items-center">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Unforgettable Events</h1>
+            <p class="text-xl max-w-2xl mx-auto">From corporate meetings to dream weddings, create memorable moments with us</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-12">
+        <!-- Event Types -->
+        <div class="text-center mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Plan Your Perfect Event</h2>
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="event-type-filter active px-6 py-3 rounded-md border border-gray-300 bg-blue-600 text-white" data-type="all">
+                    All Events
+                </button>
+                <button class="event-type-filter px-6 py-3 rounded-md border border-gray-300 hover:bg-gray-100" data-type="wedding">
+                    <i class="fas fa-ring mr-2"></i> Weddings
+                </button>
+                <button class="event-type-filter px-6 py-3 rounded-md border border-gray-300 hover:bg-gray-100" data-type="corporate">
+                    <i class="fas fa-briefcase mr-2"></i> Corporate
+                </button>
+                <button class="event-type-filter px-6 py-3 rounded-md border border-gray-300 hover:bg-gray-100" data-type="social">
+                    <i class="fas fa-glass-cheers mr-2"></i> Social
+                </button>
+            </div>
+        </div>
+        
+        <!-- Featured Venues -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Our Signature Venues</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Venue 1 -->
+                <div class="venue-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.pexels.com/photos/1691921/pexels-photo-1691921.jpeg" 
+                             alt="Grand Ballroom" 
+                             class="w-full h-full object-cover venue-image transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Grand Ballroom</h3>
+                        <p class="text-gray-600 mb-3 flex items-center">
+                            <i class="fas fa-users mr-2 text-blue-600"></i> Capacity: 500 guests
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            Our largest venue featuring crystal chandeliers, a dance floor, and state-of-the-art AV equipment. 
+                            Perfect for grand weddings and galas.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Dance Floor</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Stage</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">AV Equipment</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold">
+                            View Details →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Venue 2 -->
+                <div class="venue-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg" 
+                             alt="Boardroom" 
+                             class="w-full h-full object-cover venue-image transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Executive Boardroom</h3>
+                        <p class="text-gray-600 mb-3 flex items-center">
+                            <i class="fas fa-users mr-2 text-blue-600"></i> Capacity: 30 guests
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            Sophisticated meeting space with walnut paneling, leather chairs, and cutting-edge 
+                            teleconferencing facilities for important business meetings.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Video Conferencing</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Projector</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Whiteboard</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold">
+                            View Details →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Venue 3 -->
+                <div class="venue-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.pexels.com/photos/1691922/pexels-photo-1691922.jpeg" 
+                             alt="Garden Pavilion" 
+                             class="w-full h-full object-cover venue-image transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Garden Pavilion</h3>
+                        <p class="text-gray-600 mb-3 flex items-center">
+                            <i class="fas fa-users mr-2 text-blue-600"></i> Capacity: 200 guests
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            Open-air venue surrounded by lush gardens and water features. Ideal for outdoor 
+                            weddings, cocktail receptions, and sunset parties.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Outdoor</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Scenic Views</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Dance Area</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold">
+                            View Details →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Event Packages -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Event Packages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Package 1 -->
+                <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-type="wedding">
+                    <div class="relative h-48">
+                        <img src="https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg" 
+                             alt="Royal Wedding Package" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 bg-blue-600 text-white px-4 py-1">
+                            Wedding Package
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Royal Wedding</h3>
+                        <p class="text-gray-700 mb-4">
+                            Our most luxurious wedding package including venue decoration, gourmet catering, 
+                            bridal suite, and dedicated wedding planner.
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-700 mb-4 space-y-1">
+                            <li>Up to 200 guests</li>
+                            <li>5-star catering with premium bar</li>
+                            <li>Floral decorations</li>
+                            <li>Bridal makeup and hairstyling</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">Starting at ₹15,00,000</span>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">
+                                Enquire Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-type="corporate">
+                    <div class="relative h-48">
+                        <img src="https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg" 
+                             alt="Executive Meeting Package" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 bg-blue-600 text-white px-4 py-1">
+                            Corporate Package
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Executive Meeting</h3>
+                        <p class="text-gray-700 mb-4">
+                            All-inclusive package for productive business meetings with premium amenities 
+                            and professional support services.
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-700 mb-4 space-y-1">
+                            <li>Conference room for 8 hours</li>
+                            <li>AV equipment and high-speed WiFi</li>
+                            <li>Tea/coffee breaks and working lunch</li>
+                            <li>Dedicated event manager</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">Starting at ₹25,000</span>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">
+                                Enquire Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-type="social">
+                    <div class="relative h-48">
+                        <img src="https://images.pexels.com/photos/274131/pexels-photo-274131.jpeg" 
+                             alt="Anniversary Celebration Package" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 bg-blue-600 text-white px-4 py-1">
+                            Social Package
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Anniversary Celebration</h3>
+                        <p class="text-gray-700 mb-4">
+                            Memorable celebration package for special anniversaries with personalized 
+                            decorations and gourmet dining.
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-700 mb-4 space-y-1">
+                            <li>Private dining room</li>
+                            <li>Customized menu</li>
+                            <li>Floral centerpieces</li>
+                            <li>Photography service</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">Starting at ₹1,50,000</span>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">
+                                Enquire Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Testimonials -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm">Wedding - Jan 2023</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "The Taj team made our wedding dreams come true! Every detail was perfect, 
+                        from the floral arrangements to the exquisite menu. Our guests are still 
+                        talking about it months later."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya K." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Priya K.</h4>
+                            <p class="text-gray-600 text-sm">Bride</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm">Conference - Mar 2023</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "Our annual leadership conference was a huge success thanks to the Taj team. 
+                        The facilities were top-notch, the catering was excellent, and the service 
+                        was impeccable. We'll definitely be back next year."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajiv S." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Rajiv S.</h4>
+                            <p class="text-gray-600 text-sm">CEO, Tech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm">Anniversary - Dec 2022</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "Celebrating our 25th anniversary at the Taj was magical. The private dining 
+                        room was beautifully decorated, the food was exceptional, and the staff went 
+                        above and beyond to make our evening special. Worth every penny!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Meena P." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Meena P.</h4>
+                            <p class="text-gray-600 text-sm">Guest</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Enquiry Form -->
+        <div class="bg-blue-50 rounded-lg p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Plan Your Event</h2>
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                    <input type="text" class="w-full px-3 py-2 border rounded-md">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border rounded-md">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Phone</label>
+                    <input type="tel" class="w-full px-3 py-2 border rounded-md">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Event Type</label>
+                    <select class="w-full px-3 py-2 border rounded-md">
+                        <option>Wedding</option>
+                        <option>Corporate Meeting</option>
+                        <option>Conference</option>
+                        <option>Social Gathering</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Event Date</label>
+                    <input type="date" class="w-full px-3 py-2 border rounded-md">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Approx. Guests</label>
+                    <input type="number" class="w-full px-3 py-2 border rounded-md">
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Additional Requirements</label>
+                    <textarea rows="4" class="w-full px-3 py-2 border rounded-md"></textarea>
+                </div>
+                <div class="md:col-span-2">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition duration-300 font-bold">
+                        Submit Enquiry
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <!--#include file="footer.html" -->
+    
+    <script>
+        // Event type filter functionality
+        document.querySelectorAll('.event-type-filter').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.event-type-filter').forEach(btn => {
+                    btn.classList.remove('active', 'bg-blue-600', 'text-white');
+                    btn.classList.add('border-gray-300', 'hover:bg-gray-100');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active', 'bg-blue-600', 'text-white');
+                this.classList.remove('border-gray-300', 'hover:bg-gray-100');
+                
+                const eventType = this.getAttribute('data-type');
+                const eventCards = document.querySelectorAll('.event-card');
+                
+                eventCards.forEach(card => {
+                    if (eventType === 'all' || card.getAttribute('data-type') === eventType) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Set default date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.querySelector('input[type="date"]').valueAsDate = tomorrow;
+    </script>
+</body>
+</html>
