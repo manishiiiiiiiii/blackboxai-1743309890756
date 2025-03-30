@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taj Mahal Palace | Taj Hotels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gallery-thumbnail {
+            transition: all 0.3s ease;
+        }
+        .gallery-thumbnail:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+        .amenity-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #EFF6FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .room-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <!--#include file="header.html" -->
+    
+    <!-- Property Header -->
+    <section class="bg-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex items-center text-sm text-gray-600 mb-2">
+                <a href="hotels.html" class="text-blue-600 hover:underline">Our Hotels</a>
+                <span class="mx-2">/</span>
+                <span>India</span>
+                <span class="mx-2">/</span>
+                <span>Mumbai</span>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-6">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Taj Mahal Palace</h1>
+                    <div class="flex items-center">
+                        <div class="flex text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600">4.9 (2,300 reviews)</span>
+                    </div>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <div class="text-2xl font-bold text-blue-600">From ₹25,000/night</div>
+                    <button class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition duration-300">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Location -->
+            <div class="flex items-center text-gray-600 mb-6">
+                <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>
+                <span>Apollo Bunder, Mumbai, Maharashtra 400001, India</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery -->
+    <section class="bg-gray-50">
+        <div class="container mx-auto px-6 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- Main Image -->
+                <div class="md:col-span-2 row-span-2">
+                    <img src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg" 
+                         alt="Taj Mahal Palace" 
+                         class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <!-- Thumbnails -->
+                <div class="gallery-thumbnail">
+                    <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg" 
+                         alt="Taj Mahal Palace Lobby" 
+                         class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-thumbnail">
+                    <img src="https://images.pexels.com/photos/2373201/pexels-photo-2373201.jpeg" 
+                         alt="Taj Mahal Palace Room" 
+                         class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-thumbnail">
+                    <img src="https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg" 
+                         alt="Taj Mahal Palace Pool" 
+                         class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-thumbnail">
+                    <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg" 
+                         alt="Taj Mahal Palace Dining" 
+                         class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Property Details -->
+            <div class="lg:w-2/3">
+                <!-- Tabs -->
+                <div class="border-b border-gray-200 mb-6">
+                    <nav class="flex space-x-8">
+                        <button class="tab-button py-4 px-1 border-b-2 font-medium text-sm border-blue-500 text-blue-600" data-tab="overview">
+                            Overview
+                        </button>
+                        <button class="tab-button py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="rooms">
+                            Rooms & Suites
+                        </button>
+                        <button class="tab-button py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="dining">
+                            Dining
+                        </button>
+                        <button class="tab-button py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="amenities">
+                            Amenities
+                        </button>
+                    </nav>
+                </div>
+                
+                <!-- Tab Content -->
+                <div id="overview" class="tab-content active">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Iconic Luxury in Mumbai</h2>
+                    <p class="text-gray-700 mb-6">
+                        The Taj Mahal Palace, Mumbai is India's first harbour landmark and a global icon of Indian hospitality. 
+                        Since its opening in 1903, this legendary hotel has hosted kings, dignitaries and eminent personalities 
+                        from across the globe, and is acknowledged as a world leader in hospitality.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Overlooking the majestic Gateway of India, this luxury hotel's unique architecture 
+                        offers the finest views of Mumbai's harbour. The hotel combines tradition with modern 
+                        conveniences to bring you the best of both worlds.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Highlights</h3>
+                    <ul class="list-disc pl-5 text-gray-700 mb-6 space-y-2">
+                        <li>Centrally located in South Mumbai, overlooking the Arabian Sea</li>
+                        <li>560 rooms and suites with stunning views of the Gateway of India or the city</li>
+                        <li>10 award-winning restaurants and bars</li>
+                        <li>Jiva Spa offering traditional Indian wellness therapies</li>
+                        <li>24-hour concierge and butler service</li>
+                    </ul>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">COVID-19 Safety Measures</h3>
+                        <p class="text-gray-700 mb-4">
+                            Your safety is our priority. We have implemented enhanced cleanliness standards:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                            <li>Enhanced cleaning protocols in all public areas</li>
+                            <li>Contactless check-in/check-out available</li>
+                            <li>Sanitization stations throughout the property</li>
+                            <li>Staff trained in COVID-19 prevention</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="rooms" class="tab-content">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Rooms & Suites</h2>
+                    
+                    <!-- Room Card 1 -->
+                    <div class="room-card bg-white rounded-lg shadow-md overflow-hidden mb-8 transition duration-300">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3">
+                                <img src="https://images.pexels.com/photos/2373201/pexels-photo-2373201.jpeg" 
+                                     alt="Luxury Room" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Luxury Room - Sea View</h3>
+                                <p class="text-gray-600 mb-4">45 sqm | Sleeps 2 | King Bed</p>
+                                <p class="text-gray-700 mb-4">
+                                    These elegant rooms offer stunning views of the Arabian Sea and Gateway of India. 
+                                    Features include a marble bathroom with separate shower and bathtub, 
+                                    work desk, and 24-hour in-room dining.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Free WiFi</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Air Conditioning</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Minibar</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Safe</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div class="text-blue-600 font-bold">₹25,000/night</div>
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">
+                                        Book Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Room Card 2 -->
+                    <div class="room-card bg-white rounded-lg shadow-md overflow-hidden mb-8 transition duration-300">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3">
+                                <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg" 
+                                     alt="Taj Club Room" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Taj Club Room - City View</h3>
+                                <p class="text-gray-600 mb-4">50 sqm | Sleeps 2 | King Bed</p>
+                                <p class="text-gray-700 mb-4">
+                                    Enjoy exclusive access to the Taj Club Lounge with complimentary breakfast, 
+                                    evening cocktails and personalized butler service. These rooms feature a 
+                                    separate living area and panoramic city views.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Club Lounge Access</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Free WiFi</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Butler Service</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Complimentary Breakfast</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div class="text-blue-600 font-bold">₹35,000/night</div>
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">
+                                        Book Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="dining" class="tab-content">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Dining Options</h2>
+                    
+                    <!-- Restaurant 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3">
+                                <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg" 
+                                     alt="Wasabi by Morimoto" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Wasabi by Morimoto</h3>
+                                <div class="flex items-center text-yellow-400 mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-600 text-sm ml-2">4.8 (1,200 reviews)</span>
+                                </div>
+                                <p class="text-gray-600 mb-2">
+                                    <i class="fas fa-utensils mr-2 text-blue-600"></i> Japanese | Dinner | ₹₹₹₹
+                                </p>
+                                <p class="text-gray-700 mb-4">
+                                    Master Chef Morimoto's signature restaurant offers authentic Japanese cuisine 
+                                    with the freshest ingredients flown in daily from Japan. The sushi counter 
+                                    provides an interactive dining experience.
+                                </p>
+                                <div class="flex items-center">
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300 mr-4">
+                                        Reserve Table
+                                    </button>
+                                    <span class="text-gray-600 text-sm">
+                                        <i class="fas fa-clock mr-1"></i> 7:00 PM - 11:30 PM
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Restaurant 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3">
+                                <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg" 
+                                     alt="Masala Kraft" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Masala Kraft</h3>
+                                <div class="flex items-center text-yellow-400 mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-600 text-sm ml-2">4.5 (950 reviews)</span>
+                                </div>
+                                <p class="text-gray-600 mb-2">
+                                    <i class="fas fa-utensils mr-2 text-blue-600"></i> Indian | All Day Dining | ₹₹₹
+                                </p>
+                                <p class="text-gray-700 mb-4">
+                                    Experience contemporary Indian cuisine with traditional recipes presented 
+                                    with modern flair. The restaurant features live cooking stations and a 
+                                    spectacular buffet spread for breakfast and lunch.
+                                </p>
+                                <div class="flex items-center">
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300 mr-4">
+                                        Reserve Table
+                                    </button>
+                                    <span class="text-gray-600 text-sm">
+                                        <i class="fas fa-clock mr-1"></i> 6:30 AM - 11:00 PM
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="amenities" class="tab-content">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Hotel Amenities</h2>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                        <!-- Amenity 1 -->
+                        <div class="text-center">
+                            <div class="amenity-icon mx-auto mb-3">
+                                <i class="fas fa-swimming-pool text-blue-600"></i>
+                            </div>
+                            <h4 class="font-semibold">Swimming Pool</h4>
+                            <p class="text-gray-600 text-sm">Outdoor | 7AM-7PM</p>
+                        </div>
+                        
+                        <!-- Amenity 2 -->
+                        <div class="text-center">
+                            <div class="amenity-icon mx-auto mb-3">
+                                <i class="fas fa-spa text-blue-600"></i>
+                            </div>
+                            <h4 class="font-semibold">Jiva Spa</h4>
+                            <p class="text-gray-600 text-sm">9AM-9PM | Appointments</p>
+                        </div>
+                        
+                        <!-- Amenity 3 -->
+                        <div class="text-center">
+                            <div class="amenity-icon mx-auto mb-3">
+                                <i class="fas fa-dumbbell text-blue-600"></i>
+                            </div>
+                            <h4 class="font-semibold">Fitness Center</h4>
+                            <p class="text-gray-600 text-sm">24 Hours | Personal Trainers</p>
+                        </div>
+                        
+                        <!-- Amenity 4 -->
+                        <div class="text-center">
+                            <div class="amenity-icon mx-auto mb-3">
+                                <i class="fas fa-wifi text-blue-600"></i>
+                            </div>
+                            <h4 class="font-semibold">Free WiFi</h4>
+                            <p class="text-gray-600 text-sm">High Speed | Property-wide</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Additional Services</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>24-hour concierge and butler service</li>
+                        <li>Currency exchange and business center</li>
+                        <li>Valet parking and car rental services</li>
+                        <li>Laundry and dry cleaning services</li>
+                        <li>Doctor on call and 24-hour security</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Booking Widget -->
+            <div class="lg:w-1/3">
+                <div class="bg-white p-6 rounded-lg shadow-md sticky top-6">
+                    <h3 class="text-xl font-bold mb-6 pb-2 border-b">Check Availability</h3>
+                    
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Check In</label>
+                            <input type="date" class="w-full px-3 py-2 border rounded-md">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Check Out</label>
+                            <input type="date" class="w-full px-3 py-2 border rounded-md">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Guests</label>
+                            <select class="w-full px-3 py-2 border rounded-md">
+                                <option>1 Adult</option>
+                                <option>2 Adults</option>
+                                <option>2 Adults, 1 Child</option>
+                                <option>2 Adults, 2 Children</option>
+                                <option>3+ Adults</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Room Type</label>
+                            <select class="w-full px-3 py-2 border rounded-md">
+                                <option>Luxury Room - Sea View</option>
+                                <option>Taj Club Room - City View</option>
+                                <option>Executive Suite</option>
+                                <option>Grand Luxury Suite</option>
+                            </select>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">₹25,000 x 3 nights</span>
+                                <span class="font-semibold">₹75,000</span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">Taxes & Fees</span>
+                                <span class="font-semibold">₹8,250</span>
+                            </div>
+                            <div class="border-t pt-2 mt-2">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700 font-bold">Total</span>
+                                    <span class="text-blue-600 font-bold">₹83,250</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-md transition duration-300 font-bold">
+                            Book Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Location Map -->
+    <section class="bg-gray-50 py-12">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Location</h2>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <div class="aspect-w-16 aspect-h-9">
+                    <!-- Map Placeholder - Would be replaced with actual Google Maps embed -->
+                    <div class="bg-gray-200 w-full h-96 flex items-center justify-center rounded-lg">
+                        <div class="text-center">
+                            <i class="fas fa-map-marked-alt text-4xl text-blue-600 mb-2"></i>
+                            <p class="text-gray-700">Map of Taj Mahal Palace, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Getting There</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-plane text-blue-600 mt-1 mr-2"></i>
+                            <span>Chhatrapati Shivaji International Airport (BOM): 22 km (45 min drive)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-train text-blue-600 mt-1 mr-2"></i>
+                            <span>Chhatrapati Shivaji Terminus: 3 km (10 min drive)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-subway text-blue-600 mt-1 mr-2"></i>
+                            <span>Churchgate Station: 1.5 km (5 min drive)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <!--#include file="footer.html" -->
+    
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and content
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('border-blue-500', 'text-blue-600');
+                    btn.classList.add('border-transparent', 'text-gray-500');
+                });
+                
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Add active class to clicked button and corresponding content
+                this.classList.remove('border-transparent', 'text-gray-500');
+                this.classList.add('border-blue-500', 'text-blue-600');
+                
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Set default dates for booking widget
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        
+        document.querySelectorAll('input[type="date"]')[0].valueAsDate = today;
+        document.querySelectorAll('input[type="date"]')[1].valueAsDate = tomorrow;
+    </script>
+</body>
+</html>
