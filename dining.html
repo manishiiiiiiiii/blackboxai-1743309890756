@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining | Taj Hotels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .cuisine-filter {
+            transition: all 0.3s ease;
+        }
+        .cuisine-filter.active {
+            background-color: #2563eb;
+            color: white;
+        }
+        .menu-item:hover {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <!--#include file="header.html" -->
+    
+    <!-- Hero Banner -->
+    <section class="relative bg-gray-800 h-96 flex items-center">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Culinary Excellence</h1>
+            <p class="text-xl max-w-2xl mx-auto">Experience world-class dining across our properties</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-12">
+        <!-- Cuisine Filter -->
+        <div class="flex flex-wrap gap-3 mb-8 justify-center">
+            <button class="cuisine-filter active px-4 py-2 rounded-full border border-gray-300 bg-blue-600 text-white" data-cuisine="all">
+                All Cuisines
+            </button>
+            <button class="cuisine-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-cuisine="indian">
+                Indian
+            </button>
+            <button class="cuisine-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-cuisine="international">
+                International
+            </button>
+            <button class="cuisine-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-cuisine="italian">
+                Italian
+            </button>
+            <button class="cuisine-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-cuisine="japanese">
+                Japanese
+            </button>
+            <button class="cuisine-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-cuisine="chinese">
+                Chinese
+            </button>
+        </div>
+        
+        <!-- Restaurants Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Restaurant 1 -->
+            <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-cuisine="indian">
+                <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg" 
+                     alt="Masala Kraft" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Masala Kraft</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Indian</span>
+                    </div>
+                    <div class="flex items-center text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-600 text-sm ml-2">4.5 (950 reviews)</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Contemporary Indian cuisine with traditional recipes presented with modern flair. 
+                        Features live cooking stations and spectacular buffet spreads.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-clock mr-1"></i> 6:30 AM - 11:00 PM
+                            </p>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-rupee-sign mr-1"></i> ₹₹₹
+                            </p>
+                        </div>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">
+                            Reserve
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 2 -->
+            <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-cuisine="japanese">
+                <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg" 
+                     alt="Wasabi by Morimoto" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Wasabi by Morimoto</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Japanese</span>
+                    </div>
+                    <div class="flex items-center text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-600 text-sm ml-2">4.8 (1,200 reviews)</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Master Chef Morimoto's signature restaurant offering authentic Japanese cuisine 
+                        with the freshest ingredients flown in daily from Japan.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-clock mr-1"></i> 7:00 PM - 11:30 PM
+                            </p>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-rupee-sign mr-1"></i> ₹₹₹₹
+                            </p>
+                        </div>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">
+                            Reserve
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 3 -->
+            <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-cuisine="italian">
+                <img src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg" 
+                     alt="Sapore" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Sapore</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Italian</span>
+                    </div>
+                    <div class="flex items-center text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-600 text-sm ml-2">4.7 (850 reviews)</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Authentic Italian cuisine featuring handmade pastas, wood-fired pizzas, 
+                        and an extensive wine list curated by our sommelier.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-clock mr-1"></i> 12:00 PM - 11:00 PM
+                            </p>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-rupee-sign mr-1"></i> ₹₹₹
+                            </p>
+                        </div>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">
+                            Reserve
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 4 -->
+            <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-cuisine="chinese">
+                <img src="https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg" 
+                     alt="Golden Dragon" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Golden Dragon</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Chinese</span>
+                    </div>
+                    <div class="flex items-center text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-600 text-sm ml-2">4.4 (700 reviews)</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Authentic Cantonese cuisine with specialties from Sichuan and Hunan provinces. 
+                        Features private dining rooms and a tea sommelier.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-clock mr-1"></i> 12:30 PM - 11:00 PM
+                            </p>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-rupee-sign mr-1"></i> ₹₹₹
+                            </p>
+                        </div>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">
+                            Reserve
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 5 -->
+            <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-cuisine="international">
+                <img src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg" 
+                     alt="The Sea Lounge" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">The Sea Lounge</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">International</span>
+                    </div>
+                    <div class="flex items-center text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-600 text-sm ml-2">4.6 (1,100 reviews)</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Iconic high tea venue with panoramic sea views. Features an extensive tea menu, 
+        artisan pastries, and live piano music in the evenings.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-clock mr-1"></i> 7:00 AM - 11:00 PM
+                            </p>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-rupee-sign mr-1"></i> ₹₹₹₹
+                            </p>
+                        </div>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">
+                            Reserve
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 6 -->
+            <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-cuisine="indian">
+                <img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg" 
+                     alt="Kebabs & Kurries" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Kebabs & Kurries</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Indian</span>
+                    </div>
+                    <div class="flex items-center text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-600 text-sm ml-2">4.5 (800 reviews)</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Royal Awadhi and North West Frontier cuisine featuring succulent kebabs, 
+        rich curries, and traditional breads baked in clay ovens.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-clock mr-1"></i> 12:30 PM - 11:30 PM
+                            </p>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-rupee-sign mr-1"></i> ₹₹₹
+                            </p>
+                        </div>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">
+                            Reserve
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Special Offers -->
+        <div class="bg-blue-50 rounded-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Special Dining Offers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Offer 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg" 
+                         alt="Sunday Brunch" 
+                         class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Sunday Brunch</h3>
+                        <p class="text-gray-700 mb-4">
+                            Unlimited champagne and gourmet dishes at Masala Kraft. 
+                            Every Sunday 12:30 PM - 3:30 PM.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">₹3,500 per person</span>
+                            <button class="text-blue-600 hover:text-blue-800 font-semibold">
+                                View Details →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg" 
+                         alt="Romantic Dinner" 
+                         class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Romantic Dinner</h3>
+                        <p class="text-gray-700 mb-4">
+                            Private beachfront dining with personalized menu. 
+                            Available daily by reservation.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">₹8,500 per couple</span>
+                            <button class="text-blue-600 hover:text-blue-800 font-semibold">
+                                View Details →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.pexels.com/photos/3184192/pexels-photo-3184192.jpeg" 
+                         alt="Business Lunch" 
+                         class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Business Lunch</h3>
+                        <p class="text-gray-700 mb-4">
+                            Three-course executive lunch with priority seating. 
+                            Weekdays 12:00 PM - 3:00 PM.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">₹2,200 per person</span>
+                            <button class="text-blue-600 hover:text-blue-800 font-semibold">
+                                View Details →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chef's Specials -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Chef's Special Recommendations</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-item p-6 border-b md:border-b-0 md:border-r">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-lg font-bold text-gray-800">Murgh Malai Kebab</h3>
+                            <span class="text-blue-600 font-bold">₹1,850</span>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            Succulent chicken kebabs marinated in cream, cheese and mild spices, 
+                            cooked in tandoor. Served with mint chutney.
+                        </p>
+                        <span class="text-sm text-gray-600">At Kebabs & Kurries</span>
+                    </div>
+                    
+                    <!-- Menu Item 2 -->
+                    <div class="menu-item p-6 border-b md:border-b-0 md:border-r">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-lg font-bold text-gray-800">Morimoto Sushi Platter</h3>
+                            <span class="text-blue-600 font-bold">₹3,200</span>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            Chef's selection of 12 pieces sushi and 6 pieces sashimi featuring 
+                            the day's freshest catch from Japan.
+                        </p>
+                        <span class="text-sm text-gray-600">At Wasabi by Morimoto</span>
+                    </div>
+                    
+                    <!-- Menu Item 3 -->
+                    <div class="menu-item p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-lg font-bold text-gray-800">Truffle Risotto</h3>
+                            <span class="text-blue-600 font-bold">₹2,400</span>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            Creamy Arborio rice with seasonal truffles, wild mushrooms and 
+                            Parmigiano-Reggiano cheese.
+                        </p>
+                        <span class="text-sm text-gray-600">At Sapore</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <!--#include file="footer.html" -->
+    
+    <script>
+        // Cuisine filter functionality
+        document.querySelectorAll('.cuisine-filter').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.cuisine-filter').forEach(btn => {
+                    btn.classList.remove('active', 'bg-blue-600', 'text-white');
+                    btn.classList.add('border-gray-300', 'hover:bg-gray-100');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active', 'bg-blue-600', 'text-white');
+                this.classList.remove('border-gray-300', 'hover:bg-gray-100');
+                
+                const cuisine = this.getAttribute('data-cuisine');
+                const restaurants = document.querySelectorAll('.restaurant-card');
+                
+                restaurants.forEach(restaurant => {
+                    if (cuisine === 'all' || restaurant.getAttribute('data-cuisine') === cuisine) {
+                        restaurant.style.display = 'block';
+                    } else {
+                        restaurant.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
