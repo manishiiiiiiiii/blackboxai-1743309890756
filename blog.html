@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Taj Hotels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .category-filter {
+            transition: all 0.3s ease;
+        }
+        .category-filter.active {
+            background-color: #2563eb;
+            color: white;
+        }
+        .featured-post {
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+        }
+        .featured-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <!--#include file="header.html" -->
+    
+    <!-- Featured Post -->
+    <section class="featured-post relative" style="background-image: url('https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg')">
+        <div class="featured-overlay absolute inset-0 flex items-end">
+            <div class="container mx-auto px-6 pb-12 relative z-10 text-white">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold inline-block mb-3">Featured</span>
+                <h1 class="text-3xl md:text-5xl font-bold mb-4">The Art of Indian Hospitality</h1>
+                <p class="text-xl max-w-2xl mb-6">Discover the traditions and innovations behind Taj's legendary service</p>
+                <div class="flex items-center text-sm">
+                    <div class="w-8 h-8 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Author" class="w-full h-full object-cover">
+                    </div>
+                    <span class="mr-4">Priya Sharma</span>
+                    <span><i class="far fa-clock mr-1"></i> 5 min read</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-12">
+        <!-- Categories -->
+        <div class="flex flex-wrap gap-3 mb-8 justify-center">
+            <button class="category-filter active px-4 py-2 rounded-full border border-gray-300 bg-blue-600 text-white" data-category="all">
+                All Articles
+            </button>
+            <button class="category-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-category="travel">
+                Travel Guides
+            </button>
+            <button class="category-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-category="culinary">
+                Culinary Journeys
+            </button>
+            <button class="category-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-category="culture">
+                Culture & Heritage
+            </button>
+            <button class="category-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-category="wellness">
+                Wellness
+            </button>
+        </div>
+        
+        <!-- Blog Posts -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Post 1 -->
+            <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="travel">
+                <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg" 
+                     alt="Mumbai Travel Guide" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Travel Guides</span>
+                        <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 4 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">48 Hours in Mumbai: The Ultimate Itinerary</h3>
+                    <p class="text-gray-700 mb-4">
+                        Experience the best of India's bustling financial capital with our carefully curated two-day itinerary...
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Author" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-800">Rahul Mehta</h4>
+                            <p class="text-gray-500 text-xs">May 15, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Post 2 -->
+            <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="culinary">
+                <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg" 
+                     alt="Indian Cuisine" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Culinary Journeys</span>
+                        <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 7 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">The Spice Trail: Regional Indian Cuisines Explained</h3>
+                    <p class="text-gray-700 mb-4">
+                        From the fiery curries of the south to the delicate kebabs of the north, explore India's diverse culinary landscape...
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Author" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-800">Ananya Patel</h4>
+                            <p class="text-gray-500 text-xs">April 28, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Post 3 -->
+            <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="culture">
+                <img src="https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg" 
+                     alt="Indian Architecture" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Culture & Heritage</span>
+                        <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 6 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">The Architectural Marvels of Taj Hotels</h3>
+                    <p class="text-gray-700 mb-4">
+                        Discover how our properties blend historic preservation with modern luxury through stunning architecture...
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Author" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-800">Vikram Joshi</h4>
+                            <p class="text-gray-500 text-xs">April 10, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Post 4 -->
+            <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="wellness">
+                <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg" 
+                     alt="Spa Treatment" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Wellness</span>
+                        <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 5 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ancient Healing: The Secrets of Ayurveda</h3>
+                    <p class="text-gray-700 mb-4">
+                        Learn about India's 5,000-year-old holistic healing system and how we incorporate it at Jiva Spas...
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Author" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-800">Dr. Nandini Rao</h4>
+                            <p class="text-gray-500 text-xs">March 22, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Post 5 -->
+            <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="travel">
+                <img src="https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg" 
+                     alt="Goa Beaches" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Travel Guides</span>
+                        <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 8 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Goa Beyond the Beaches: Hidden Gems</h3>
+                    <p class="text-gray-700 mb-4">
+                        Venture off the beaten path to discover Goa's spice plantations, heritage homes, and vibrant local culture...
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/38.jpg" alt="Author" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-800">Arjun Fernandes</h4>
+                            <p class="text-gray-500 text-xs">March 15, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Post 6 -->
+            <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="culinary">
+                <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg" 
+                     alt="Wine Pairing" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Culinary Journeys</span>
+                        <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 6 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Wine & Dine: Perfect Pairings with Indian Food</h3>
+                    <p class="text-gray-700 mb-4">
+                        Our sommelier shares expert tips on selecting wines to complement the complex flavors of Indian cuisine...
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Author" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-800">Rohan Malhotra</h4>
+                            <p class="text-gray-500 text-xs">March 5, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Newsletter -->
+        <div class="bg-blue-50 rounded-lg p-8 mb-12">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Stay Inspired</h2>
+                <p class="text-gray-700 mb-6">
+                    Subscribe to our newsletter for the latest travel stories, exclusive offers, and insider tips from the Taj team.
+                </p>
+                <form class="flex flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-md border focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition duration-300 font-bold whitespace-nowrap">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="flex justify-center">
+            <nav class="flex items-center space-x-2">
+                <button class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">&laquo; Previous</button>
+                <button class="px-3 py-1 rounded border bg-blue-600 text-white">1</button>
+                <button class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">2</button>
+                <button class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">3</button>
+                <button class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">Next &raquo;</button>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <!--#include file="footer.html" -->
+    
+    <script>
+        // Category filter functionality
+        document.querySelectorAll('.category-filter').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.category-filter').forEach(btn => {
+                    btn.classList.remove('active', 'bg-blue-600', 'text-white');
+                    btn.classList.add('border-gray-300', 'hover:bg-gray-100');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active', 'bg-blue-600', 'text-white');
+                this.classList.remove('border-gray-300', 'hover:bg-gray-100');
+                
+                const category = this.getAttribute('data-category');
+                const blogCards = document.querySelectorAll('.blog-card');
+                
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
